@@ -68,7 +68,7 @@ func HumanBytes(b uint64) string {
 var unknown string = color.Colorize("unknown", color.Red)
 
 func GetDistro() string {
-	cmd := exec.Command("getprop", "ro.build.version.release")
+	cmd := exec.Command("/system/bin/getprop", "ro.build.version.release")
 	output, err := cmd.Output()
 	fmt.Printf(string(output))
 	fmt.Printf(err.Error())
