@@ -68,15 +68,23 @@ func HumanBytes(b uint64) string {
 var unknown string = color.Colorize("unknown", color.Red)
 
 func GetDistro() string {
-	data, err := os.ReadFile("/etc/os-release")
-	if err != nil {
-		return unknown
+	cmd := exec.Command("getprop", "ro.build.version.release")
+	output, err := cmd.Output()
+
+	if err == nil {
+		version := strings.TrimSpace(string(output))
+		if version != "" {
+			return "Android " + version
+		}
 	}
 
-	lines := strings.SplitSeq(string(data), "\n")
-	for line := range lines {
-		if value, ok := strings.CutPrefix(line, "PRETTY_NAME="); ok {
-			return strings.Trim(value, `"'`)
+	data, err := os.ReadFile("/etc/os-release")
+	if err == nil {
+		lines := strings.Split(string(data), "\n")
+		for _, line := range lines {
+			if value, ok := strings.CutPrefix(line, "PRETTY_NAME="); ok {
+				return strings.Trim(value, `"'`)
+			}
 		}
 	}
 
