@@ -49,7 +49,7 @@ var Arts []Art = []Art{
 		Accent: color.Blue,
 		Art: []string{
 
-			color.Colorize("            +@*@             @*@             ", color.Green),
+			color.Colorize("            +@*@             @*@             ", color.Green) + color.Colorize("            +@*@             @*@             ", color.White),
 			color.Colorize("              @*@@@@@@#@@@@@@*@              ", color.Green),
 			color.Colorize("             @@***************@@             ", color.Green),
 			color.Colorize("           @********************@@           ", color.Green),
