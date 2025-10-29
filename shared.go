@@ -70,8 +70,6 @@ var unknown string = color.Colorize("unknown", color.Red)
 func GetDistro() string {
 	cmd := exec.Command("/system/bin/getprop", "ro.build.version.release")
 	output, err := cmd.Output()
-	fmt.Printf(string(output))
-	fmt.Printf(err.Error())
 
 	if err == nil {
 		version := strings.TrimSpace(string(output))
