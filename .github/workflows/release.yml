@@ -1,8 +1,9 @@
-name: build
+name: build and release
 
 on:
   push:
-    branches: ["**"]
+    tags:
+      - "v*"
 
 jobs:
   build:
