@@ -58,7 +58,7 @@ var Arts []Art = []Art{
 			color.Colorize("       +++++++++++++++++++++++++      ", color.Green),
 			color.Colorize("  +++                             ++  ", color.Green),
 			color.Colorize("  +++  +++++++++++++++++++++++++ ++++ ", color.Green),
-			color.Colorize(" +++++ +++++++++++++++++++++++++ ++++ ", color.Green),
+			color.Colorize(" ++-++ +++++++++++++++++++++++++ ++++ ", color.Green),
 			color.Colorize(" +++++ +++++++++++++++++++++++++ ++++ ", color.Green),
 			color.Colorize(" +++++ +++++++++++++++++++++++++ ++++ ", color.Green),
 			color.Colorize(" +++++ +++++++++++++++++++++++++ ++++ ", color.Green),
